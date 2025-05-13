@@ -23,6 +23,23 @@ def categorize_aqi_india(aqi):
     else:
         return "Beyond Index ❌"  # aqi<0 ou aqi>500 hors de l'echelle définie par l'autorité indienne (0 à 500) 
     
+#Conseils de santé
+def get_health_advice_en(aqi):
+    if 0 <= aqi <= 50:
+        return "🌿 Air quality is good. No precautions needed."
+    elif 51 <= aqi <= 100:
+        return "🙂 Acceptable air quality, but sensitive individuals may feel mild effects."
+    elif 101 <= aqi <= 200:
+        return "⚠️ Limit prolonged outdoor activity if you have respiratory issues."
+    elif 201 <= aqi <= 300:
+        return "😷 People with lung or heart disease should avoid outdoor exertion."
+    elif 301 <= aqi <= 400:
+        return "🚫 Everyone should reduce physical activity outdoors."
+    elif 401 <= aqi <= 500:
+        return "🛑 Health alert: Avoid outdoor activities and stay indoors."
+    else:
+        return "❓ Invalid AQI value."
+
 
 # Design Streamlit/ Titre de la page 
 
@@ -37,18 +54,53 @@ st.markdown("---")
 
 # Interface utilisateur
 st.markdown("### 📥 Input Pollutant Levels")
-col1, col2 = st.columns(2)
-with col1:
-    pm25 = st.number_input("💨PM2.5 (µg/m³)", min_value=0.0, max_value=1000.0)
-    pm10 = st.number_input("💨PM10 (µg/m³)", min_value=0.0, max_value=1000.0)
-with col2:
-    no2 = st.number_input("💨NO2 (µg/m³)", min_value=0.0, max_value=500.0)
-    so2 = st.number_input("💨SO2 (µg/m³)", min_value=0.0, max_value=500.0)
+#col1, col2 = st.columns(2)
+#with col1:
+    #pm25 = st.number_input("💨PM2.5 (µg/m³)", min_value=0.0, max_value=500.0) #  max value est défini en fonction des valeurs maximales du dataset (df.describe) et de celles recommandées pour chaque polluant.
+    #pm10 = st.number_input("💨PM10 (µg/m³)", min_value=0.0, max_value=500.0)
+    #NH3  = st.number_input("💨NH3 (µg/m³)", min_value=0.0, max_value=500.0)
+#with col2:
+    #no2 = st.number_input("💨NO2 (µg/m³)", min_value=0.0, max_value=500.0)
+    #so2 = st.number_input("💨SO2 (µg/m³)", min_value=0.0, max_value=500.0)
+    #CO  = st.number_input("💨CO (µg/m³)", min_value=0.0, max_value=500.0)
+    #OZONE= st.number_input("💨OZONE (µg/m³)", min_value=0.0, max_value=500.0)
+# Curseurs pour chaque polluant
+pm25 = st.slider("PM2.5 (µg/m³)", 0.0, 500.0, 50.0)
+pm10 = st.slider("PM10 (µg/m³)", 0.0, 500.0, 50.0)
+no2 = st.slider("NO2 (µg/m³)", 0.0, 500.0, 30.0)
+nh3 = st.slider("NH3 (µg/m³)", 0.0, 500.0, 20.0)
+so2 = st.slider("SO2 (µg/m³)", 0.0, 500.0, 20.0)
+co = st.slider("CO (mg/m³)", 0.0, 500.0, 1.0)
+ozone = st.slider("OZONE (µg/m³)", 0.0, 500.0, 30.0)
 
 # Prédiction sur bouton
-if st.button("🔍 Predict AQI"):
-    prediction = model.predict([[pm25, pm10, no2, so2]])[0]
+st.markdown("### 🔍 AQI Prediction")
+st.write("Click on the button to predict the AQI based on pollutant levels.")
+if st.button("Predict AQI"):
+    input_data = [[pm25, pm10, no2, nh3, so2, co, ozone]]
+    prediction = model.predict(input_data)[0]
     category = categorize_aqi_india(prediction)
+    st.info(get_health_advice_en(prediction))
 
     st.write(f" 📊 Predicted AQI : {prediction:.2f}")
     st.write(f"🧪Air Quality: {category}")
+
+
+## Ajout d'informations pour l'utilisateur##
+#explication sur l'AQI : What is AQI?
+st.markdown("##### ℹ️ Understanding the Air Quality Index (AQI)")
+with st.expander("What is AQI?"):
+    st.markdown("""
+The **Air Quality Index (AQI)** is a numerical scale used to communicate the level of air pollution in a specific area.  
+It is calculated based on the concentrations of key air pollutants such as: **PM2.5, PM10, NO₂, SO₂, CO, and O₃**.
+
+Here's how to understand the AQI values:
+*AQI values are based on India's National Air Quality Standards.*
+                
+- 🟢 **0–50** : Good – air quality is considered satisfactory.  
+- 🟡 **51–100** : Satisfactory – may affect very sensitive individuals.  
+- 🟠 **101–200** : Moderate – sensitive people should reduce long outdoor activities.  
+- 🔴 **201–300** : Poor – may cause health effects for everyone.  
+- 🟣 **301–400** : Very Poor – serious health impact after prolonged exposure.  
+- ⚫ **401–500** : Severe – hazardous for all, avoid outdoor activity.
+""")
