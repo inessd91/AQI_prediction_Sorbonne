@@ -39,21 +39,21 @@ Voici les résultats de l'évaluation de ces deux modèles :
 
 Modèle RandomForestRegressor
 
-•	Performance sur la base d'apprentissage :
-•	RMSE (train) : 2.9956
-•	R² (train) : 0.9991
-•	Performance sur la base de test :
-•	RMSE (test) : 14.6440
-•	R² (test) : 0.9759
+•	Performance sur la base d'apprentissage :  
+•	RMSE (train) : 2.9956  
+•	R² (train) : 0.9991  
+•	Performance sur la base de test :  
+•	RMSE (test) : 14.6440  
+•	R² (test) : 0.9759  
 
 Modèle de Régression Linéaire
 
-•	Performance sur la base d'apprentissage :
-•	RMSE (train) : 12.5034
-•	R² (train) : 0.9841
-•	Performance sur la base de test :
-•	RMSE (test) : 13.5718
-•	R² (test) : 0.9793
+•	Performance sur la base d'apprentissage :  
+•	RMSE (train) : 12.5034  
+•	R² (train) : 0.9841  
+•	Performance sur la base de test :  
+•	RMSE (test) : 13.5718  
+•	R² (test) : 0.9793  
  	
 **Sélection du Modèle**
 
