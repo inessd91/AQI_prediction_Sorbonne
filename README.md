@@ -1,7 +1,7 @@
 Air Quality Index (AQI) Prediction in India
 
 
-1.	Objectif de la Webapp
+**1.	Objectif de la Webapp**
 
 Pourqoui ?
 
@@ -12,7 +12,7 @@ Objectif
 L'objectif de cette webapp est de prédire l'Indice de Qualité de l'Air (AQI) en Inde en fonction des niveaux de différents polluants. Elle permet aux utilisateurs d'entrer les valeurs moyennes de polluants pour estimer la qualité de l'air selon la norme nationale indienne AQI.
 
 
-2.	Choix du Dataset
+**2.	Choix du Dataset**
 
 Pour ce projet, nous avons utilisé le dataset "India Air Quality Index (2024)" disponible sur Kaggle. Ce dataset offre une vue d'ensemble complète de la qualité de l'air dans diverses villes et régions de l'Inde. Il a été choisi pour plusieurs raisons:
 
@@ -30,12 +30,12 @@ En utilisant ce dataset, nous nous assurons que notre modèle est entraîné sur
 
 
 
-3.	Choix du Modèle
+**3.	Choix du Modèle**
 
 Pour ce projet, nous avons testé deux modèles de régression afin de déterminer lequel était le plus adapté pour prédire l'Indice de Qualité de l'Air (AQI) : le modèle RandomForestRegressor et le modèle de Régression Linéaire. Chaque modèle prend en entrée les niveaux des différents polluants et produit une prédiction de l'AQI.
 Voici les résultats de l'évaluation de ces deux modèles :
 
-***Évaluation des Modèles**
+**Évaluation des Modèles**
 
 Modèle RandomForestRegressor
 
@@ -55,11 +55,11 @@ Modèle de Régression Linéaire
 •	RMSE (test) : 13.5718
 •	R² (test) : 0.9793
  	
-***Sélection du Modèle**
+**Sélection du Modèle**
 
 Sur la base des résultats obtenus, nous avons choisi le modèle de Régression Linéaire pour notre application. Bien que le modèle RandomForestRegressor ait montré une performance légèrement meilleure sur les données d'apprentissage, le modèle de Régression Linéaire a démontré une meilleure généralisation sur les données de test, avec un RMSE et un R² comparables, voire légèrement meilleurs. Cela indique une meilleure capacité à prédire de nouvelles données non vues, ce qui est crucial pour une application de prédiction en temps réel.
  	
-***Analyse des Résultats**
+**Analyse des Résultats**
 
 Une fois le modèle de Régression Linéaire sélectionné, nous avons analysé les coefficients du modèle pour comprendre l'impact de chaque polluant sur l'Indice de Qualité de l'Air (AQI). Voici comment nous avons procédé :
 
@@ -88,7 +88,7 @@ Les coefficients permettent de déterminer l'impact relatif de chaque polluant s
 
 	Cette analyse aide à identifier les polluants les plus influents pour cibler les efforts de réduction de la pollution.
 
-***Amélioration du modèle**
+**Amélioration du modèle**
 
 Pour améliorer le modèle de régression linéaire, nous avons exploré la réduction des variables en supprimant celles avec des coefficients proches de zéro (NH3_Avg, CO_Avg, OZONE_Avg) pour le rendre plus interprétable et plus rapide.
 
@@ -105,7 +105,7 @@ Comparaison avec le Modèle Complet
 Le modèle complet a de meilleures performances avec une différence d'environ 1 point de RMSE et 0.001 de R². Bien que le modèle réduit soit presque aussi performant, plus simple et plus rapide, nous avons décidé de garder le modèle complet pour sa performance plus stable et légèrement meilleure sur les données de test.
 
 
-4.	Fonctionnement Global de l'Application
+**4.	Fonctionnement Global de l'Application**
 
 
 a.  Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).
@@ -115,7 +115,7 @@ b.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application
 c.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").
 
 
-Technologies Utilisées
+***Technologies Utilisées***
 
 •	Interface Utilisateur : Streamlit
 
@@ -124,7 +124,7 @@ Technologies Utilisées
 •	Modèle de Machine Learning : Modèle de régression (utilisant scikit-learn)
 
 
-Instructions d'Installation et d'Utilisation
+***Instructions d'Installation et d'Utilisation***
 
 1.	Clonez le dépôt de l'application depuis GitHub: 
     https://github.com/inessd91/prediction_python.git
@@ -134,7 +134,7 @@ Instructions d'Installation et d'Utilisation
 4.	Lancez l'application en exécutant le fichier principal avec Streamlit : streamlit run app.py 
 5.	Ouvrez votre navigateur et accédez à l'URL fournie par Streamlit pour utiliser l'application : Par défaut, Streamlit ouvrira automatiquement une nouvelle fenêtre de navigateur avec l'application. Si ce n'est pas le cas, vous pouvez accéder à l'application en suivant l'URL affichée dans le terminal
 
-Exemple d'Utilisation
+***Exemple d'Utilisation***
 
 1.	Entrez les valeurs des polluants dans les champs correspondants.
 2.	Cliquez sur le bouton "Predict AQI".
