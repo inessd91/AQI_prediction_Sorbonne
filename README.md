@@ -108,9 +108,9 @@ Le modèle complet a de meilleures performances avec une différence d'environ 1
 4.	Fonctionnement Global de l'Application
 
 
-1.	Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).
-2.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application utilise le modèle de régression pour prédire l'AQI basé sur les niveaux de polluants entrés.
-3.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").
+a.  Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).
+b.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application utilise le modèle de régression pour prédire l'AQI basé sur les niveaux de polluants entrés.
+c.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").
 
 
 Technologies Utilisées
@@ -121,10 +121,13 @@ Technologies Utilisées
 
 Instructions d'Installation et d'Utilisation
 
-1.	Clonez le dépôt de l'application depuis GitHub.
-2.	Installez les dépendances nécessaires en utilisant pip install 
-3.	Lancez l'application en exécutant le fichier principal avec Streamlit : streamlit run app.py 
-4.	Ouvrez votre navigateur et accédez à l'URL fournie par Streamlit pour utiliser l'application : Par défaut, Streamlit ouvrira automatiquement une nouvelle fenêtre de navigateur avec l'application. Si ce n'est pas le cas, vous pouvez accéder à l'application en suivant l'URL affichée dans le terminal
+1.	Clonez le dépôt de l'application depuis GitHub: 
+    https://github.com/inessd91/prediction_python.git
+
+2.	Installez les dépendances nécessaires en utilisant pip install
+3.  Exécutez le fichier Jupyter Notebook (Dataset.ipynb) pour créer le modèle 
+4.	Lancez l'application en exécutant le fichier principal avec Streamlit : streamlit run app.py 
+5.	Ouvrez votre navigateur et accédez à l'URL fournie par Streamlit pour utiliser l'application : Par défaut, Streamlit ouvrira automatiquement une nouvelle fenêtre de navigateur avec l'application. Si ce n'est pas le cas, vous pouvez accéder à l'application en suivant l'URL affichée dans le terminal
 
 Exemple d'Utilisation
 
