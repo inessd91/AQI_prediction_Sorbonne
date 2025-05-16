@@ -70,36 +70,36 @@ Les coefficients permettent de déterminer l'impact relatif de chaque polluant s
 -	Un coefficient positif indique une détérioration de la qualité de l'air avec l'augmentation du polluant.
 -	Un coefficient négatif indique une amélioration de la qualité de l'air avec l'augmentation du polluant.
 
-•	Résultats de l'Analyse :
--	Intercept : 11.1898
--	Coefficients :
-•	PM2.5 : 0.751033
-•	PM10 : 0.267372
-•	NO2 : 0.046121
-•	NH3 : -0.000651
-•	SO2 : 0.064195
-•	CO : -0.002072
-•	OZONE : -0.035897
+•	Résultats de l'Analyse :  
+-	Intercept : 11.1898  
+-	Coefficients :  
+•	PM2.5 : 0.751033  
+•	PM10 : 0.267372  
+•	NO2 : 0.046121  
+•	NH3 : -0.000651  
+•	SO2 : 0.064195  
+•	CO : -0.002072  
+•	OZONE : -0.035897  
 
-•	Interprétation :
--	PM2.5 et PM10 ont les impacts les plus significatifs sur la détérioration de la qualité de l'air.
--	NO2 et SO2 ont un impact positif mais moindre.
--	NH3, CO, et OZONE ont des effets minimes ou légèrement positifs sur la qualité de l'air.
+•	Interprétation :  
+-	PM2.5 et PM10 ont les impacts les plus significatifs sur la détérioration de la qualité de l'air.  
+-	NO2 et SO2 ont un impact positif mais moindre.  
+-	NH3, CO, et OZONE ont des effets minimes ou légèrement positifs sur la qualité de l'air.  
 
-	Cette analyse aide à identifier les polluants les plus influents pour cibler les efforts de réduction de la pollution.
+*Cette analyse aide à identifier les polluants les plus influents pour cibler les efforts de réduction de la pollution.*
 
 **Amélioration du modèle**
 
 Pour améliorer le modèle de régression linéaire, nous avons exploré la réduction des variables en supprimant celles avec des coefficients proches de zéro (NH3_Avg, CO_Avg, OZONE_Avg) pour le rendre plus interprétable et plus rapide.
 
-Résultats du Modèle Réduit
+Résultats du Modèle Réduit  
 
-•	Performance sur la base d'apprentissage :
-•	RMSE (train) : 12.7186
-•	R² (train) : 0.9830
-•	Performance sur la base de test :
-•	RMSE (test) : 14.6438
-•	R² (test) : 0.9779
+•	Performance sur la base d'apprentissage :  
+•	RMSE (train) : 12.7186  
+•	R² (train) : 0.9830  
+•	Performance sur la base de test :  
+•	RMSE (test) : 14.6438  
+•	R² (test) : 0.9779  
 Comparaison avec le Modèle Complet
 
 Le modèle complet a de meilleures performances avec une différence d'environ 1 point de RMSE et 0.001 de R². Bien que le modèle réduit soit presque aussi performant, plus simple et plus rapide, nous avons décidé de garder le modèle complet pour sa performance plus stable et légèrement meilleure sur les données de test.
@@ -108,20 +108,20 @@ Le modèle complet a de meilleures performances avec une différence d'environ 1
 **4.	Fonctionnement Global de l'Application**
 
 
-a.  Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).
+a.  Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).  
 
-b.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application utilise le modèle de régression pour prédire l'AQI basé sur les niveaux de polluants entrés.
+b.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application utilise le modèle de régression pour prédire l'AQI basé sur les niveaux de polluants entrés.  
 
-c.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").
+c.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").  
 
 
 ***Technologies Utilisées***
 
-•	Interface Utilisateur : Streamlit
+•	Interface Utilisateur : Streamlit  
 
-•	Backend : Python
+•	Backend : Python  
 
-•	Modèle de Machine Learning : Modèle de régression (utilisant scikit-learn)
+•	Modèle de Machine Learning : Modèle de régression (utilisant scikit-learn)  
 
 
 ***Instructions d'Installation et d'Utilisation***
@@ -129,16 +129,16 @@ c.	Affichage des Résultats : L'application affiche le résultat de la prédicti
 1.	Clonez le dépôt de l'application depuis GitHub: 
     https://github.com/inessd91/prediction_python.git
 
-2.	Installez les dépendances nécessaires en utilisant pip install
-3.  Exécutez le fichier Jupyter Notebook (Dataset.ipynb) pour créer le modèle 
-4.	Lancez l'application en exécutant le fichier principal avec Streamlit : streamlit run app.py 
-5.	Ouvrez votre navigateur et accédez à l'URL fournie par Streamlit pour utiliser l'application : Par défaut, Streamlit ouvrira automatiquement une nouvelle fenêtre de navigateur avec l'application. Si ce n'est pas le cas, vous pouvez accéder à l'application en suivant l'URL affichée dans le terminal
+2.	Installez les dépendances nécessaires en utilisant pip install  
+3.  Exécutez le fichier Jupyter Notebook (Dataset.ipynb) pour créer le modèle  
+4.	Lancez l'application en exécutant le fichier principal avec Streamlit : streamlit run app.py  
+5.	Ouvrez votre navigateur et accédez à l'URL fournie par Streamlit pour utiliser l'application : Par défaut, Streamlit ouvrira automatiquement une nouvelle fenêtre de navigateur avec l'application. Si ce n'est pas le cas, vous pouvez accéder à l'application en suivant l'URL affichée dans le terminal  
 
 ***Exemple d'Utilisation***
 
-1.	Entrez les valeurs des polluants dans les champs correspondants.
-2.	Cliquez sur le bouton "Predict AQI".
-3.	Visualisez le résultat de la prédiction de l'AQI et l'interprétation de la qualité de l'air.
+1.	Entrez les valeurs des polluants dans les champs correspondants.  
+2.	Cliquez sur le bouton "Predict AQI".  
+3.	Visualisez le résultat de la prédiction de l'AQI et l'interprétation de la qualité de l'air.  
 
 
 
