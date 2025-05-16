@@ -35,7 +35,7 @@ En utilisant ce dataset, nous nous assurons que notre modèle est entraîné sur
 Pour ce projet, nous avons testé deux modèles de régression afin de déterminer lequel était le plus adapté pour prédire l'Indice de Qualité de l'Air (AQI) : le modèle RandomForestRegressor et le modèle de Régression Linéaire. Chaque modèle prend en entrée les niveaux des différents polluants et produit une prédiction de l'AQI.
 Voici les résultats de l'évaluation de ces deux modèles :
 
- 	Évaluation des Modèles
+***Évaluation des Modèles**
 
 Modèle RandomForestRegressor
 
@@ -55,11 +55,11 @@ Modèle de Régression Linéaire
 •	RMSE (test) : 13.5718
 •	R² (test) : 0.9793
  	
-    Sélection du Modèle
+***Sélection du Modèle**
 
 Sur la base des résultats obtenus, nous avons choisi le modèle de Régression Linéaire pour notre application. Bien que le modèle RandomForestRegressor ait montré une performance légèrement meilleure sur les données d'apprentissage, le modèle de Régression Linéaire a démontré une meilleure généralisation sur les données de test, avec un RMSE et un R² comparables, voire légèrement meilleurs. Cela indique une meilleure capacité à prédire de nouvelles données non vues, ce qui est crucial pour une application de prédiction en temps réel.
  	
-    Analyse des Résultats
+***Analyse des Résultats**
 
 Une fois le modèle de Régression Linéaire sélectionné, nous avons analysé les coefficients du modèle pour comprendre l'impact de chaque polluant sur l'Indice de Qualité de l'Air (AQI). Voici comment nous avons procédé :
 
@@ -88,7 +88,7 @@ Les coefficients permettent de déterminer l'impact relatif de chaque polluant s
 
 	Cette analyse aide à identifier les polluants les plus influents pour cibler les efforts de réduction de la pollution.
 
- 	Amélioration du modèle
+***Amélioration du modèle**
 
 Pour améliorer le modèle de régression linéaire, nous avons exploré la réduction des variables en supprimant celles avec des coefficients proches de zéro (NH3_Avg, CO_Avg, OZONE_Avg) pour le rendre plus interprétable et plus rapide.
 
@@ -109,15 +109,20 @@ Le modèle complet a de meilleures performances avec une différence d'environ 1
 
 
 a.  Entrée des Niveaux de Polluants : Les utilisateurs entrent les valeurs moyennes des différents polluants (PM2.5, PM10, NO2, NH3, SO2, CO, et O3).
+
 b.	Prédiction de l'AQI : En cliquant sur le bouton "Predict AQI", l'application utilise le modèle de régression pour prédire l'AQI basé sur les niveaux de polluants entrés.
+
 c.	Affichage des Résultats : L'application affiche le résultat de la prédiction de l'AQI, ainsi qu'une interprétation de la qualité de l'air (par exemple, "Acceptable air quality, but sensitive individuals may feel mild effects").
 
 
 Technologies Utilisées
 
 •	Interface Utilisateur : Streamlit
+
 •	Backend : Python
+
 •	Modèle de Machine Learning : Modèle de régression (utilisant scikit-learn)
+
 
 Instructions d'Installation et d'Utilisation
 
