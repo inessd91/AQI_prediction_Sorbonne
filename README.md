@@ -63,12 +63,12 @@ Sur la base des résultats obtenus, nous avons choisi le modèle de Régression 
 
 Une fois le modèle de Régression Linéaire sélectionné, nous avons analysé les coefficients du modèle pour comprendre l'impact de chaque polluant sur l'Indice de Qualité de l'Air (AQI). Voici comment nous avons procédé :
 
-•	Extraction des Coefficients : Les coefficients pour chaque polluant (PM2.5, PM10, NO2, NH3, SO2, CO, et O3) ont été extraits.
+•	Extraction des Coefficients : Les coefficients pour chaque polluant (PM2.5, PM10, NO2, NH3, SO2, CO, et O3) ont été extraits.  
 •	Interprétation des Coefficients:
 
-Les coefficients permettent de déterminer l'impact relatif de chaque polluant sur l'AQI.
--	Un coefficient positif indique une détérioration de la qualité de l'air avec l'augmentation du polluant.
--	Un coefficient négatif indique une amélioration de la qualité de l'air avec l'augmentation du polluant.
+Les coefficients permettent de déterminer l'impact relatif de chaque polluant sur l'AQI.  
+-	Un coefficient positif indique une détérioration de la qualité de l'air avec l'augmentation du polluant.  
+-	Un coefficient négatif indique une amélioration de la qualité de l'air avec l'augmentation du polluant.  
 
 •	Résultats de l'Analyse :  
 -	Intercept : 11.1898  
